@@ -1,16 +1,16 @@
-from translator import englishToFrench, frenchToEnglish
+import unittest
+from translator import english_to_french, french_to_english
 
 # Test englishToFrench
-def test_englishToFrench():
-    # Test case: Null input
-    assert englishToFrench("") == ""
-    # Test case
-    assert englishToFrench("Hello") == "Bonjour"
+def test_english_to_french():
+    assertEqual(english_to_french('Hello'), 'Bonjour')
+    assertNotEqual(english_to_french('Goodbye'), 'Au revoir')
 
 
 # Test frenchToEnglish
-def test_frenchToEnglish():
-    # Test case: Null input
-    assert frenchToEnglish("") == ""
-    # Test case
-    assert frenchToEnglish("Bonjour") == "Hello"
+def test_french_to_english():
+    assertEqual(french_to_english('Bonjour'), 'Hello')
+    assertNotEqual(french_to_english('Au revoir'), 'Goodbye')
+
+if __name__ == '__main__':
+    unittest.main()
